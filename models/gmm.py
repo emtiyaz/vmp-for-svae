@@ -14,6 +14,13 @@ from models import svae
 from helpers.scheduling import create_schedule
 from visualisation.visualise_gmm import plot_clusters, plt
 
+"""
+Variational Mixture of Gaussians, according to:
+  Pattern Matching and Machine Learning (Chapter 10.2)
+  Christopher M. Bishop.
+  Springer, 2006.
+"""
+
 
 def update_Nk(r_nk):
     # Bishop eq 10.51
@@ -291,13 +298,6 @@ if __name__ == '__main__':
     #     'K': 10,
     #     'seed': 10
     # })
-
-    schedule = create_schedule({
-        'method': 'gmm',
-        'dataset': 'aggregation',
-        'K': 10,
-        'seed': 0
-    })
 
     ####################################################################################################################
 
