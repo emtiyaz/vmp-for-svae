@@ -57,7 +57,7 @@ schedule = create_schedule({
     'method': 'svae-cvi',
     'lr': [0.0003],    # adam stepsize
     'lrcvi': [0.2],    # cvi stepsize (convex combination)
-    'decay_rate': [0.95],
+    'decay_rate': [0.95],  # decreasing cvi stepsize
     'K': 10,           # nb components
     'L': [6],          # latent dimensionality
     'U': 50,           # hidden units
@@ -429,17 +429,16 @@ for config_id, config in enumerate(schedule):
             try:
                 for i in range(nb_iters):
 
-                    # save checkpoint periodically
+                    # periodically save tf-checkpoint and execution stats
                     if i % checkpoint_freq == 0 or i == nb_iters - 1:
-                        # record execution stats and save trained variables
-                        # run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-                        # run_metadata = tf.RunMetadata()
-                        # _, neg_elbo, dtl = sess.run([training_step, neg_normed_elbo, details],
-                        #                             options=run_options,
-                        #                             run_metadata=run_metadata)
-                        # summary_writer.add_run_metadata(run_metadata, 'step%d' % i)
-                        _, neg_elbo, dtl = sess.run([training_step, neg_normed_elbo, details])  # todo
-                        # model_saver.save(sess, log_path + '/checkpoint', global_step=i)
+                        run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+                        run_metadata = tf.RunMetadata()
+                        _, neg_elbo, dtl = sess.run([training_step, neg_normed_elbo, details],
+                                                    options=run_options,
+                                                    run_metadata=run_metadata)
+                        summary_writer.add_run_metadata(run_metadata, 'step%d' % i)
+                        model_saver.save(sess, log_path + '/checkpoint', global_step=i)
+                        # _, neg_elbo, dtl = sess.run([training_step, neg_normed_elbo, details])  # todo
                     else:
                         _, neg_elbo, dtl = sess.run([training_step, neg_normed_elbo, details])
 
