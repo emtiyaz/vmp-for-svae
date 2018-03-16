@@ -222,7 +222,7 @@ def compare_pinwheel():
     save_plot('pinwheel_mse_te', path='./')
 
 
-def boxplot_noisy_pinwheel():
+def compare_noisy_pinwheel():
     # plots performance of latent SMM for increasing noise level
 
     path = '../noisy_pinwheel_wu'
@@ -344,6 +344,6 @@ def boxplot_noisy_pinwheel():
 
 
 if __name__ == '__main__':
-    boxplot_noisy_pinwheel()
+    compare_noisy_pinwheel()
     # compare_pinwheel()
     # compare_auto()

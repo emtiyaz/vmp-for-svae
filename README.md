@@ -15,7 +15,7 @@ Please note that for simplicity, `environment.yml` only contains TensorFlow with
 
 
 ## Running the Code
-Execute `experiments_multi_gpu.py` to run our algorithm. Several options can be set at the beginning of this script. For instance it is possible to use multiple GPUs for training.
+Execute `experiments.py` to run our algorithm. Several options can be set at the beginning of this script. For instance it is possible to use multiple GPUs for training.
 
 Then, the experimental setup can be defined: dataset, stepsize, neural network architecture, etc. One or multiple experiment configurations can be listed in the variable `schedule` and are executed consecutively. 
 
