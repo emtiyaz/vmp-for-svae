@@ -30,3 +30,17 @@ The plots in Figure 2 in the paper have been generated with the script `visualis
 - Our code builds on the [SVAE implementation](https://github.com/mattjj/svae "SVAE Code") by Johnson et. al. which is written in numpy and autograd. We have 'translated' parts of this code to Tensorflow.
 - To allow for multi-GPU training, we used the _model replica approach_ explained [here](https://github.com/normanheckscher/mnist-multi-gpu/blob/master/README.md#training-a-model-using-multiple-gpu-cards "Model Replica Approach") and implemented [here](https://github.com/normanheckscher/mnist-multi-gpu/blob/master/mnist_multi_gpu_batching_train.py "Model Replica Example") by Norman Heckscher. 
 - We tried to make our plots look nicer using [this script](http://bkanuka.com/articles/native-latex-plots/ "Native Looking matplotlib Plots in LaTeX") by Bennett Kanuka.
+
+
+## Citing
+If you use our code, please cite our ICLR paper. This is the Bibtex:
+```
+@inproceedings{
+lin2018variational,
+title={Variational Message Passing with Structured Inference Networks},
+author={Wu Lin and Nicolas Hubacher and Mohammad Emtiyaz Khan},
+booktitle={International Conference on Learning Representations},
+year={2018},
+url={https://openreview.net/forum?id=HyH9lbZAW},
+}
+```
