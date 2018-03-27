@@ -23,7 +23,11 @@ The performance measured during these experiments is saved in a log directory (s
 
 
 ## Plots
-The plots in Figure 2 in the paper have been generated with the script `visualisation/plots.py`, the plots in Figure 3 with the script `visualisation/visualise_sampled_distr.py`. These plots can only be generated after the log files mentioned above have been generated.
+The plots in Figure 2 in the paper (see screenshot below) have been generated with the script `visualisation/plots.py`, the plots in Figure 3 with the script `visualisation/visualise_sampled_distr.py`. These plots can only be generated after the log files mentioned above have been generated.
+
+![Fig2](https://github.com/emtiyaz/vmp-for-svae/blob/master/figures_readme/fig2.PNG "Figure 2 from the paper")
+
+![Fig3](https://github.com/emtiyaz/vmp-for-svae/blob/master/figures_readme/fig3.PNG "Figure 3 from the paper")
 
 
 ## Acknowledgements
